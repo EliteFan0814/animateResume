@@ -1,0 +1,20 @@
+/*
+ * 3 2 1 开始！
+ * 为了清楚表达，让我们显示代码的同时高亮代码。
+*/
+
+* {
+    transition: all 1s;
+}
+
+body {
+    background-color: #ddd;
+}
+
+#sourceCode {
+    border: 1px solid red;
+    padding: 16px;
+    transform:rotate3d(360deg);
+}
+
+/*加点样式*/
