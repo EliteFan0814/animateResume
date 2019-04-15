@@ -1,0 +1,56 @@
+aside{
+    display: none;
+    outline: 1px solid red;
+    overflow: hidden;
+    width: 300px;
+    height: inherit;
+}
+aside .existBlock{
+    background-color: #4D4D4D;
+    width: 300px;
+    height: 180px;
+}
+.shortcut{
+    width: 76%;
+    height: inherit;
+    text-align: center;
+    margin: -68px auto 0;
+}
+.shortcut .header {
+    background-color: transparent;
+}
+.shortcut .header a{
+    display: inline-block;
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    overflow: hidden;
+    background-color: #88acdb;
+}
+.shortcut h1.myname{
+    font-family: Roboto,serif;
+    font-size: 30px;
+    font-weight: lighter;
+    color: #696969;
+    padding: 5px;
+    margin: 25px;
+}
+.shortcut .mybelief{
+    font-family: lucida sans unicode,sans-serif;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    line-height: 25px;
+}
+.shortcut .myhome{
+    padding: 65px;
+}
+.shortcut .myhome a{
+    font-size: 14px;
+    color: #8b8888;
+    text-decoration: none;
+}
+.shortcut .myhome a:hover{
+    color: #B4A5AF;
+}

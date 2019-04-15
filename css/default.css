@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 2s;
+}
+
+body {
+    /* outline: 1px solid red; */
+    height: 100vh;
+}
+
+#sourceCode{
+    position: fixed;
+    top: 20%;
+    background: #000;
+    font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+    font-size: 12px;
+    min-width: 280px;
+    overflow: hidden;
+    left: 40%;
+    color:#fff;
+}
+
+#sourceCode .token.comment{
+    color:#fff;
+}
+
+
+.main{
+    height: 100%;
+}
