@@ -67,8 +67,8 @@ var move = `
   font-size: 30px;
   font-weight: lighter;
   color: #696969;
-  padding: 5px;
-  margin: 25px;
+  padding: 4px;
+  margin: 25px 0 29px;
 }
 /*写下我最喜欢的一句话*/
 .shortcut .mybelief{
