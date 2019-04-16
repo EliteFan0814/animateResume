@@ -90,7 +90,7 @@ var move = `
   text-decoration: none;
 }
 `
-
+/*
 // 模仿 windows cmd 80 100 500 100
 writeCode(cmd1, 10, () => {
   //死机了
@@ -113,7 +113,7 @@ writeCode(cmd1, 10, () => {
     })
   })
 })
-
+*/
 function writeCode(add_code, speed, callBack) {
   let n = 0
   let write_timer = setInterval(function () {

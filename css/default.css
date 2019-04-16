@@ -8,7 +8,12 @@ body {
     /* outline: 1px solid red; */
     height: 100vh;
 }
-
+.icon {
+    width: 28px; height: 28px;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
 #sourceCode{
     position: fixed;
     top: 20%;
