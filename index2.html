@@ -50,11 +50,32 @@
     </div>
     <div class="main">
         <div class="myrscard">
-            <article class="markdown-body">
-                
+            <article id="markdownRs" class="markdown-body">
+
             </article>
         </div>
     </div>
+    <script>
+        var mdCode = `
+                ## 范培超
+                1. 手机
+                2. 住址
+                `
+        writeMarkDown(mdCode,100)
+        function writeMarkDown(md_code, speed, callBack) {
+            console.log(222)
+            let n = 0;
+            let md_timer = setInterval(function () {
+                n++
+                markdownRs.innerHTML += md_code.slice(n - 1, n)
+                markdownRs.scrollTop = markdownRs.scrollHeight
+                if (n >= md_code.length) {
+                    window.clearInterval(md_timer)
+                    callBack.call()
+                }
+            }, speed)
+        }
+    </script>
 </body>
 
 </html>

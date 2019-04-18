@@ -1,10 +1,9 @@
-var cmd1 = `/*Microsoft Windows [版本 10.0.17134.706]
+var cmd = `/*Microsoft Windows [版本 10.0.17134.706]
  (c) 2018 Microsoft Corporation。保留所有权利。
  
- C:\\Users\\范培超>Welcome to my rscard!
+ C:\\Users\\范培超>Make my RScard
 
- 我来介绍一下我自己吧！
- 让我们先做一些准备工作，先固定一下终端窗口的高度：
+ 固定终端高度：
 */
 #sourceCode {
   height: 180px;
@@ -26,13 +25,12 @@ var move = `
 }
 /*加上我的头像*/
 #myportrait{
-  width: 114px;
   height: 114px;
 }
 /*变成圆形吧！*/
 .shortcut .header a{
   border-radius: 50%;
-  border: 5px solid #fff;
+  border-width: 5px;
 }
 /*添加一个蒙版*/
 .existBlock{
@@ -44,24 +42,14 @@ var move = `
 }
 /*写下我的名字*/
 .shortcut h1.myname{
-  display: block;
   color: #696969;
-  font-family: Roboto,serif;
   font-size: 30px;
-  margin: 25px 0 29px;
-  
 }
-/*这是我最喜欢的一句话*/
+/*写下我最喜欢的一句话*/
 .shortcut .mybelief{
-  display: block;
   color: #999;
-  font-size: 14px;
-  line-height: 25px;
 }
 /*有空可以来我的博客看一下*/
-.shortcut .myhome{
-  display: block;
-}
 .shortcut .myhome a{
   color: #8b8888;
   text-decoration: none;
@@ -71,7 +59,6 @@ var move = `
 }
 /*添加我的社交账号*/
 .shortcut .social{
-  display: block;
   opacity: 1;
   margin-top: 50px;
 }
@@ -88,16 +75,93 @@ var move = `
 .main .myrscard{
   display: block;
   margin: 30px;
-  min-height: 90%;
+  height: 92%;
 }
-` 
-
+/*现在请看右边的自我介绍*/
+`
+var mdCode = `
+  # 自我介绍
+  我叫范培超，自学前端半年，希望应聘前端开发岗位的工作
+  ## 技能介绍
+  HTML CSS javaScript 
+  ## 项目介绍
+  1. canvas 画板
+  2. 键盘导航
+  3. 无缝轮播
+  4. 动态简历
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+  ## 联系方式
+  - qq
+  - email
+  - 微信
+`
+var toHTML = `
+md 文件写好了，但是并不好看
+给它加一些 css 样式
+`
+var end = `
+现在终于完成了动态简历，
+谢谢您的观看！
+`
 // 模仿 windows cmd 80 100 500 100
-writeCode(cmd1, 70, () => {
-      //正式开始
-      writeCode(move, 50, () => {
-
+writeCode(cmd, 0, () => {
+  //正式开始
+  writeCode(move, 0, () => {
+    writeMarkDown(mdCode, 50,()=>{
+      writeCode(toHTML,100,()=>{
+        mdToHtml(mdCode,()=>{
+          writeCode(end,100)
+        })
       })
+    })
+  })
 })
 
 function writeCode(add_code, speed, callBack) {
@@ -109,17 +173,31 @@ function writeCode(add_code, speed, callBack) {
     sourceCode.scrollTop = sourceCode.scrollHeight
     if (n >= add_code.length) {
       window.clearInterval(write_timer)
-      callBack.call()
+      callBack && callBack.call()
     }
   }, speed)
 }
 
-function creatPaper(callBack) {
-  var paper = document.createElement('div')
-  paper.id = 'paper'
-  document.body.appendChild(paper)
-  callBack.call()
+function writeMarkDown(md_code, speed, callBack) {
+  let n = 0;
+  let md_timer = setInterval(function () {
+    n++
+    markdownRs.innerHTML += md_code.slice(n - 1, n)
+    markdownRs.scrollTop = markdownRs.scrollHeight
+    if (n >= md_code.length) {
+      window.clearInterval(md_timer)
+      callBack && callBack.call()
+    }
+  }, speed)
 }
+
+function mdToHtml(md_text,callBack){
+  let md = window.markdownit()
+  markdownRs.innerHTML = md.render(md_text)
+  markdownRs.scrollTop = 0
+  callBack && callBack.call()
+}
+
 // var n = 0
 // var id = setInterval(function () {
 //   n++
@@ -132,25 +210,3 @@ function creatPaper(callBack) {
 //     fn3()
 //   }
 // }, 100)
-
-
-
-function fn3() {
-  var result = `
-  #paper{
-    width: 200px;
-    height: 200px;
-    border: 1px solid red;
-  }
-  `
-  var n = 0
-  var id = setInterval(function () {
-    n++
-    sourceStyle.innerHTML += result.slice(n - 1, n)
-    // sourceCode.innerHTML += result.slice(n - 1, n)
-    sourceCode.innerHTML = Prism.highlight(sourceStyle.innerHTML, Prism.languages.css);
-    if (n >= result.length) {
-      window.clearInterval(id)
-    }
-  }, 100)
-}
