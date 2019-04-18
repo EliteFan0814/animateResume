@@ -1,12 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-    transition: all 2s;
+    box-sizing: border-box;
+    transition: all 1.2s;
 }
-
-body {
-    /* outline: 1px solid red; */
-    height: 100vh;
+html,body{
+    height: 100%;
+    /* background-color: #EAEAEA; */
 }
 .icon {
     width: 28px; height: 28px;
@@ -16,11 +16,12 @@ body {
  }
 #sourceCode{
     position: fixed;
+    z-index:1;
     top: 20%;
     background: #000;
     font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
     font-size: 12px;
-    min-width: 280px;
+    width: 300px;
     overflow: hidden;
     left: 40%;
     color:#fff;
@@ -31,6 +32,18 @@ body {
 }
 
 
-.main{
+.aside{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
     height: 100%;
+}
+.main{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 300px;
+    height: 1000px;
+    /* background-color: red; */
 }

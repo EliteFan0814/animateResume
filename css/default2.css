@@ -1,52 +1,80 @@
-aside{
+.aside aside{
     display: none;
+    border: 1px solid red;
+    overflow: hidden;
     background-color: #fff;
-    width:100%;
+    width: 0;
+    height: 0;
 }
-aside .existBlock{
-    /* display: none; */
-    display: block;
-    background-color: #4D4D4D;
+.existBlock{
+    /* background-color: #4D4D4D; */
     width: 300px;
     height: 180px;
 }
 .shortcut{
-    /* display: none;
-    width: 0%;
-    height: 0;
-    margin: 0; */
-
-    display: block;
-  width: 76%;
-  text-align: center;
-  margin: -68px auto 0;
+    /* display: none; */
+    width: 76%;
+    text-align: center;
+    margin: 0px auto 0;
 }
 .shortcut .header {
-    /* display: none; */
-    display: block;
-  background-color: transparent;
+    background-color: transparent;
+}
+#myportrait{
+    width: 0;
+    height: 0;
 }
 .shortcut .header a{
     display: none;
     width: 0px;
     height: 0px;
+    border-radius: 0%;
+    border: 0px solid #fff;
+    overflow: hidden;
+    background-color: transparent;
 }
 .shortcut h1.myname{
     display: none;
+    /* font-family: Roboto,serif; */
     font-size: 12px;
-    padding: 0px;
-    margin: 0px;
+    /* font-weight: lighter; */
+    color: transparent;
+    padding: 4px;
+    /* margin: 0; */
 }
 .shortcut .mybelief{
     display: none;
+    font-family: lucida sans unicode,sans-serif;
+    /* text-align: center; */
+    color: transparent;
+    font-size: 14px;
+    line-height: 25px;
 }
 .shortcut .myhome{
     display: none;
     padding: 0px;
 }
 .shortcut .myhome a{
-    text-decoration: none;
+    font-size: 14px;
+    color: transparent;
+    /* text-decoration: none; */
 }
 .shortcut .myhome a:hover{
     color: #B4A5AF;
+}
+.shortcut .social{
+    display: none;
+    opacity: 0;
+    margin-top: 0px;
+}
+.shortcut .social a{
+    display: inline-block;
+    margin: 0 0px;
+    text-decoration:none;
+}
+
+.main .myrscard{
+    margin: 30px;
+    height: 200px;
+    background-color: #fff;
 }

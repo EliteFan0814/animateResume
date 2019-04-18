@@ -1,11 +1,10 @@
-aside{
-    display: block;
-    outline: 1px solid red;
+.aside aside{
+    /* border: 1px solid red; */
     overflow: hidden;
-    width: 300px;
+    background-color: #fff;
     height: inherit;
 }
-aside .existBlock{
+.existBlock{
     background-color: #4D4D4D;
     width: 300px;
     height: 180px;
@@ -20,8 +19,8 @@ aside .existBlock{
 }
 .shortcut .header a{
     display: inline-block;
-    width: 118px;
-    height: 118px;
+    width: 128px;
+    height: 128px;
     border-radius: 50%;
     border: 5px solid #fff;
     overflow: hidden;
@@ -61,10 +60,15 @@ aside .existBlock{
     margin: 0 6px;
     text-decoration:none;
 }
-.shortcut .social .icon{
+/* .shortcut .social .icon{
     
 
 }
 .shortcut .social .icon:hover{
-    /* cursor: pointer; */
+    cursor: pointer;
+} */
+.main .myrscard{
+    margin: 30px;
+    height: 200px;
+    background-color: #fff;
 }

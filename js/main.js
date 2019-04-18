@@ -1,119 +1,107 @@
 var cmd1 = `/*Microsoft Windows [版本 10.0.17134.706]
  (c) 2018 Microsoft Corporation。保留所有权利。
  
- C:\\Users\\范培超>_烫烫烫烫烫烫烫烫烫烫烫烫...
- `
-var re_message2 = `
- 不步部布不好好好意思思，
- 您的ai爱机死死死死机了，
- 冲虫充崇宠铳重重重启中`
-var suspension3 = `. . . . . .`
-var start4 = `
-
- Welcome to windows 10
- 
- 不黑 windows 了，现在正式开始！
+ C:\\Users\\范培超>Welcome to my rscard!
 
  我来介绍一下我自己吧！
- 让我们先做一些准备工作，固定一下终端的位置：
+ 让我们先做一些准备工作，先固定一下终端窗口的高度：
 */
- `
-var codeslide = `#sourceCode {
+#sourceCode {
   // overflow: auto;
   height: 180px;
-  
 }
-`
-var code_noslide = `
-}
-`
+ `
 var move = `
-/*放在这里太碍事了，把它挪到旁边*/
-  #sourceCode{
-    padding: 0 10px;
-    transition: top 1s, left 1.8s;
-    top: 0;
-    left: 0;
-  }
 /*给桌面添加一个背景颜色*/
   body{
     background-color: #EAEAEA;
   }
 /*添加一个侧边栏*/
-  aside{
+  .aside aside{
     display: block;
-    overflow: hidden;
     width: 300px;
     height: inherit;
+    border: none;
   }
-/*终端窗口好碍眼，把它变透明*/
-#sourceCode{
-  background-color: rgba(77,77,77,0.6);
-}
-/*开始画头像*/
+
+/*添加一个画布*/
 .shortcut .header a{
   display: inline-block;
-  width: 118px;
-  height: 118px;
-  border-radius: 50%;
-  border: 5px solid #fff;
-  overflow: hidden;
+  width: 128px;
+  height: 128px;
   background-color: #88acdb;
 }
-/*签上我的名字，哈哈！*/
+/*加上我的头像*/
+#myportrait{
+  width: 114px;
+  height: 114px;
+}
+/*变成圆形吧！*/
+.shortcut .header a{
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+/*添加一个蒙版*/
+.existBlock{
+  background-color: #4D4D4D;
+}
+/*上移我的头像*/
+.shortcut{
+  margin-top: -68px;
+}
+/*写下我的名字*/
 .shortcut h1.myname{
   display: block;
-  font-family: Roboto,serif;
-  font-size: 30px;
-  font-weight: lighter;
   color: #696969;
-  padding: 4px;
+  font-size: 30px;
+  font-family: Roboto,serif;
+  font-weight: lighter;
   margin: 25px 0 29px;
+  
 }
-/*写下我最喜欢的一句话*/
+/*这是我最喜欢的一句话*/
 .shortcut .mybelief{
   display: block;
-  font-family: lucida sans unicode,sans-serif;
-  text-align: center;
   color: #999;
   font-size: 14px;
   line-height: 25px;
 }
-/*有空来我的博客看一下吧*/
+/*有空可以来我的博客看一下*/
 .shortcut .myhome{
   display: block;
-  padding: 65px;
 }
 .shortcut .myhome a{
-  font-size: 14px;
   color: #8b8888;
   text-decoration: none;
 }
+.shortcut .myhome{
+  padding: 65px;
+}
+/*添加我的社交账号*/
+.shortcut .social{
+  display: block;
+  opacity: 1;
+  margin-top: 50px;
+}
+.shortcut .social a{
+  margin: 0 6px;
+}
+/*终端好碍事，把它挪走*/
+#sourceCode {
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
 `
-/*
-// 模仿 windows cmd 80 100 500 100
-writeCode(cmd1, 10, () => {
-  //死机了
-  writeCode(re_message2, 10, () => {
-    // 重启中
-    writeCode(suspension3, 50, () => {
-      //正式开始
-      writeCode(start4, 10, () => {
-        // 是否需要滚动条
-        if (true) {
-          writeCode(codeslide, 10, () => {
-            writeCode(move,10,()=>{})
-          })
-        } else {
-          writeCode(code_noslide, 100, () => {
 
-          })
-        }
+// 模仿 windows cmd 80 100 500 100
+writeCode(cmd1, 50, () => {
+      //正式开始
+      writeCode(move, 70, () => {
+
       })
-    })
-  })
 })
-*/
+
 function writeCode(add_code, speed, callBack) {
   let n = 0
   let write_timer = setInterval(function () {
