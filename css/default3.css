@@ -69,6 +69,15 @@
 } */
 .main .myrscard{
     margin: 30px;
-    height: 200px;
+    min-height: 90%;
     background-color: #fff;
+}
+.main .myrscard::before{
+    display: inline-block;
+    position: absolute;
+    top:31px;
+    left:31px;
+    content: "";
+    height: 81px;
+    border-left: 5px solid #4d4d4d;
 }

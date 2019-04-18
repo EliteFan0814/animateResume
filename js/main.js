@@ -7,7 +7,6 @@ var cmd1 = `/*Microsoft Windows [版本 10.0.17134.706]
  让我们先做一些准备工作，先固定一下终端窗口的高度：
 */
 #sourceCode {
-  // overflow: auto;
   height: 180px;
 }
  `
@@ -18,18 +17,12 @@ var move = `
   }
 /*添加一个侧边栏*/
   .aside aside{
-    display: block;
-    width: 300px;
     height: inherit;
-    border: none;
   }
-
 /*添加一个画布*/
 .shortcut .header a{
   display: inline-block;
-  width: 128px;
-  height: 128px;
-  background-color: #88acdb;
+  background-color: #88acdb;  
 }
 /*加上我的头像*/
 #myportrait{
@@ -53,9 +46,8 @@ var move = `
 .shortcut h1.myname{
   display: block;
   color: #696969;
-  font-size: 30px;
   font-family: Roboto,serif;
-  font-weight: lighter;
+  font-size: 30px;
   margin: 25px 0 29px;
   
 }
@@ -92,12 +84,18 @@ var move = `
   left: 0;
   opacity: 0.6;
 }
-`
+/*创建一个 markdown 画布*/
+.main .myrscard{
+  display: block;
+  margin: 30px;
+  min-height: 90%;
+}
+` 
 
 // 模仿 windows cmd 80 100 500 100
-writeCode(cmd1, 50, () => {
+writeCode(cmd1, 70, () => {
       //正式开始
-      writeCode(move, 70, () => {
+      writeCode(move, 50, () => {
 
       })
 })

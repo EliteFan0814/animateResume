@@ -1,9 +1,8 @@
 .aside aside{
-    display: none;
-    border: 1px solid red;
+    display: block;
     overflow: hidden;
     background-color: #fff;
-    width: 0;
+    width: 300px;
     height: 0;
 }
 .existBlock{
@@ -26,8 +25,8 @@
 }
 .shortcut .header a{
     display: none;
-    width: 0px;
-    height: 0px;
+    width: 128px;
+    height: 128px;
     border-radius: 0%;
     border: 0px solid #fff;
     overflow: hidden;
@@ -37,7 +36,7 @@
     display: none;
     /* font-family: Roboto,serif; */
     font-size: 12px;
-    /* font-weight: lighter; */
+    font-weight: lighter;
     color: transparent;
     padding: 4px;
     /* margin: 0; */
@@ -74,7 +73,17 @@
 }
 
 .main .myrscard{
-    margin: 30px;
-    height: 200px;
+    display: none;
+    margin: 0px;
+    min-height: 0%;
     background-color: #fff;
+}
+.main .myrscard::before{
+    display: inline-block;
+    position: absolute;
+    top:31px;
+    left:31px;
+    content: "";
+    height: 81px;
+    border-left: 5px solid #4d4d4d;
 }
