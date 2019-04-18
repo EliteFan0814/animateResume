@@ -71,93 +71,61 @@ var move = `
   left: 0;
   opacity: 0.6;
 }
-/*创建一个 markdown 画布*/
+/*在右边创建一张白纸*/
 .main .myrscard{
   display: block;
   margin: 30px;
   height: 92%;
 }
-/*现在请看右边的自我介绍*/
+/*这样我就可以在白纸上写字了，
+请看右边即将呈现的简历*/
 `
 var mdCode = `
-  # 自我介绍
-  我叫范培超，自学前端半年，希望应聘前端开发岗位的工作
-  ## 技能介绍
-  HTML CSS javaScript 
-  ## 项目介绍
-  1. canvas 画板
-  2. 键盘导航
-  3. 无缝轮播
-  4. 动态简历
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
-  ## 联系方式
-  - qq
-  - email
-  - 微信
+  ## 1. 自我介绍
+  姓名：范培超
+  毕业院校：郑州航空工业管理学院
+  联系电话：15099999999
+  微    信：fpc552426811
+
+  此前从事 搜索引擎优化 相关工作，有 网页制作 相关经验。
+  自学前端超过半年，希望应聘前端开发岗位的工作。
+  ## 2. 技能介绍
+  熟练使用 **HTML** **CSS** **jQuery** 进行日常网页开发
+  有较扎实的原生 **javaScript** 基础
+  有 **微信小程序** 相关开发经验
+
+  ## 3. 项目介绍
+  1. [在线 canvas 画板](https://elitefan0814.github.io/firstdemo/Canvas.html)
+  2. [仿键盘导航页面](https://elitefan0814.github.io/firstdemo/kbd.html)
+  3. [无缝轮播](https://elitefan0814.github.io/firstdemo/swiper_fifth_loop.html)
+  4. [响应式商务通]()
+  5. [动态简历制作]()
 `
 var toHTML = `
-md 文件写好了，但是并不好看
-给它加一些 css 样式
+/*简历的 md 文件写好了，但是并不好看
+那就给它加一些 css 样式吧！
+3   
+2   
+1   
+变！*/
 `
 var end = `
-现在终于完成了动态简历，
-谢谢您的观看！
+/*现在终于完成了动态简历，
+感谢您耐心看完整个过程，
+我也该消失了，
+请您继续查看完整版的简历，
+拜拜！*/
+#sourceCode {
+  display: none;
+}
 `
 // 模仿 windows cmd 80 100 500 100
-writeCode(cmd, 0, () => {
-  //正式开始
-  writeCode(move, 0, () => {
-    writeMarkDown(mdCode, 50,()=>{
-      writeCode(toHTML,100,()=>{
-        mdToHtml(mdCode,()=>{
-          writeCode(end,100)
+writeCode(cmd, 70, () => {
+  writeCode(move, 70, () => {
+    writeMarkDown(mdCode, 50, () => {
+      writeCode(toHTML, 100, () => {
+        mdToHtml(mdCode, () => {
+          writeCode(end, 100)
         })
       })
     })
@@ -166,6 +134,8 @@ writeCode(cmd, 0, () => {
 
 function writeCode(add_code, speed, callBack) {
   let n = 0
+  let sourceStyle = document.querySelector('#sourceStyle')
+  let sourceCode = document.querySelector('#sourceCode')
   let write_timer = setInterval(function () {
     n++
     sourceStyle.innerHTML += add_code.slice(n - 1, n)
@@ -179,7 +149,8 @@ function writeCode(add_code, speed, callBack) {
 }
 
 function writeMarkDown(md_code, speed, callBack) {
-  let n = 0;
+  let n = 0
+  let markdownRs = document.querySelector('#markdownRs')
   let md_timer = setInterval(function () {
     n++
     markdownRs.innerHTML += md_code.slice(n - 1, n)
@@ -191,22 +162,10 @@ function writeMarkDown(md_code, speed, callBack) {
   }, speed)
 }
 
-function mdToHtml(md_text,callBack){
+function mdToHtml(md_text, callBack) {
   let md = window.markdownit()
+  let markdownRs = document.querySelector('#markdownRs')
   markdownRs.innerHTML = md.render(md_text)
   markdownRs.scrollTop = 0
   callBack && callBack.call()
 }
-
-// var n = 0
-// var id = setInterval(function () {
-//   n++
-//   sourceStyle.innerHTML += result.slice(n - 1, n)
-//   // sourceCode.innerHTML += result.slice(n - 1, n)
-//   sourceCode.innerHTML = Prism.highlight(sourceStyle.innerHTML, Prism.languages.css);
-//   if (n >= result.length) {
-//     window.clearInterval(id)
-//     creatPaper()
-//     fn3()
-//   }
-// }, 100)
