@@ -131,7 +131,9 @@ writeCode(cmd, 70, () => {
     writeMarkDown(mdCode, 50, () => {
       writeCode(toHTML, 100, () => {
         mdToHtml(mdCode, () => {
-          writeCode(end, 100)
+          writeCode(end, 100,()=>{
+            targetBlank()
+          })
         })
       })
     })
@@ -173,5 +175,13 @@ function mdToHtml(md_text, callBack) {
   let markdownRs = document.querySelector('#markdownRs')
   markdownRs.innerHTML = md.render(md_text)
   markdownRs.scrollTop = 0
+  callBack && callBack.call()
+}
+
+function targetBlank(callBack){
+  let allA = document.querySelectorAll('#markdownRs a')
+  allA.forEach((item)=>{
+    item.target = '_blank'
+  })
   callBack && callBack.call()
 }
