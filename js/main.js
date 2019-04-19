@@ -89,18 +89,23 @@ var mdCode = `
 
   此前从事 搜索引擎优化 相关工作，有 网页制作 相关经验。
   自学前端超过半年，希望应聘前端开发岗位的工作。
-  
+
   ## 2. 技能介绍
   熟练使用 **HTML** **CSS** **jQuery** 进行日常网页开发
   有较扎实的原生 **javaScript** 基础
+  熟悉使用 **React** **Vue** 框架
+  有 **Node.js** 相关经验
   有 **微信小程序** 相关开发经验
 
   ## 3. 项目介绍
   1. [在线 canvas 画板](https://elitefan0814.github.io/firstdemo/Canvas.html)
   2. [仿键盘导航页面](https://elitefan0814.github.io/firstdemo/kbd.html)
   3. [无缝轮播](https://elitefan0814.github.io/firstdemo/swiper_fifth_loop.html)
-  4. [响应式商务通]()
-  5. [动态简历制作]()
+  4. [响应式商务通 未整理]()
+  5. [动态简历制作 未整理]()
+  6. [React]()
+  7. [Vue]()
+  8. [小程序]()
 `
 var toHTML = `
 /*简历的 md 文件写好了，但是并不好看
