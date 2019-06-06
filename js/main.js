@@ -87,25 +87,33 @@ var mdCode = `
   联系电话：15099999999
   微    信：fpc552426811
 
-  此前从事 搜索引擎优化 相关工作，有 网页制作 相关经验。
-  自学前端超过半年，希望应聘前端开发岗位的工作。
+  此前就职于上海世邦工业科技集团，从事电商部门搜索引擎优化，网站制作和维护工作，为部门写过一些提高工作效率
+  的 js 插件和基于 jQuery 的商务通留言应用，极大提高客户留存率。
+  熟练使用 HTML DIV CSS 进行网页布局和制作，以及 HTML5 语义化 标签和 CSS3 动画
+  熟练使用原生 JavaScript 和 jQuery 常用 API，熟练使用 ES6 语法，熟悉 ES6 的常用语法和新特性
+  对前端工程化有一定理解，能够配置并使用 webpack 环境搭建工具
+  有移动端和微信小程序开发经验，能够使用动态 rem 等响应式开发技术适配移动端 web 应用
+  熟悉 Vue 框架，能够使用包括 vue-router vuex 在内的 Vue 全家桶开发 web 项目
+  了解 node.js ，使用 node.js 写过简单的注册登陆服务器
+  对 HTTP 请求响应等相关知识有系统理解，了解常用的 web 性能优化方案
 
   ## 2. 技能介绍
   熟练使用 **HTML** **CSS** **jQuery** 进行日常网页开发
+  熟练使用 **ES6** 语法的常用 api ，以及一些新的语法特性
   有较扎实的原生 **javaScript** 基础
-  熟悉使用 **React** **Vue** 框架
+  熟悉使用 **Vue** 框架
   有 **Node.js** 相关经验
   有 **微信小程序** 相关开发经验
 
   ## 3. 项目介绍
-  1. [在线 canvas 画板](https://elitefan0814.github.io/firstdemo/Canvas.html)
-  2. [仿键盘导航页面](https://elitefan0814.github.io/firstdemo/kbd.html)
-  3. [无缝轮播](https://elitefan0814.github.io/firstdemo/swiper_fifth_loop.html)
-  4. [响应式商务通 未整理]()
-  5. [动态简历制作 未整理]()
-  6. [React]()
-  7. [Vue]()
-  8. [小程序]()
+  1. [思维共享平台](https://elitefan0814.github.io/sharing-blog/dist/index.html#/)
+  2. [微信小程序](https://github.com/EliteFan0814/aifanyi-translate)
+  3. [仿写 CNode 社区](https://elitefan0814.github.io/cnodeImitation/dist/index.html)
+  4. [在线 canvas 画板](https://elitefan0814.github.io/firstdemo/Canvas.html)
+  5. [仿键盘导航页面](https://elitefan0814.github.io/firstdemo/kbd.html)
+  6. [无缝轮播](https://elitefan0814.github.io/firstdemo/swiper_fifth_loop.html)
+  7. [响应式商务通](https://elitefan0814.github.io/businessSites/show.html)
+  8. [动态简历制作](https://elitefan0814.github.io/animateResume/)
 `
 var toHTML = `
 /*简历的 md 文件写好了，但是并不好看
